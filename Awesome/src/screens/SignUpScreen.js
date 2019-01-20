@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
     registration_form :{
         fontFamily: 'Futura-CondensedExtraBold',
         fontSize: 20,
-        color : '#4b4b4b'
+        color : '#4b4b4b',
+        width: null,
+        height: 60,
+        backgroundColor: '#eaeaea'
     }
 });

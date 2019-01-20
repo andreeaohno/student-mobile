@@ -15,7 +15,10 @@ class HomeScreen extends Component{
 
         return(
             <View>
-                <Image source={require('../../media/books.png')}/>
+                <View style={{ justifyContent: 'center', alignItems:'center', flexDirection: 'row'}}>
+                    <Image source={require('../../media/lightbulb.png')} style={styles.logo}/>
+                    <Text style={{textAlign: 'center', fontFamily:'Futura-CondensedExtraBold',fontSize:24,fontWeight: 'bold'}}> Student UAB </Text>
+                </View>
                 <Button style={styles.buttons} title={'Log in'} onPress={() => this.props.navigation.navigate('Login')}>
                     <Text style={styles.buttons}> </Text>
                 </Button>
@@ -40,5 +43,9 @@ const styles = StyleSheet.create({
         width: null,
         height: 50,
         fontSize: 40
+    },
+    logo :{
+        width: 70,
+        height: 70,
     }
 });
