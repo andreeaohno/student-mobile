@@ -2,21 +2,26 @@ import React,{Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as firebase from 'firebase';
 import AppContainer from './src/screens/AppContainer';
+import firebaseConfig from "./src/firebase";
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import { Provider } from 'react-redux'
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBLl65SVE9ANmPmThNL-noJK8LvI2L0SfI",
-  authDomain: "student-mobile-ba542.firebaseapp.com",
-  databaseURL: "https://student-mobile-ba542.firebaseio.com",
-  projectId: "student-mobile-ba542",
-  storageBucket: "student-mobile-ba542.appspot.com",
-};
+import rootSaga from './src/redux/saga/saga'
+import allReducers from './src/redux/reducer'
+
+const sagaMiddleware = createSagaMiddleware();
+let store = createStore(allReducers, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
 
 firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
   render() {
     return (
-     <AppContainer/>
+        <Provider store={store}>
+          <AppContainer/>
+        </Provider>
     );
   }
 }

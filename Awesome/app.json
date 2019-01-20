@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Awesome",
-    "slug": "Awesome",
+    "name": "Student-Mobile",
+    "slug": "Student-Mobile",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/lightbulb.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/BeFunky-design.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
