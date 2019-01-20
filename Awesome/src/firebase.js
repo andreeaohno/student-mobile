@@ -2,11 +2,11 @@
 import * as firebase from 'firebase';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBLl65SVE9ANmPmThNL-noJK8LvI2L0SfI",
-    authDomain: "student-mobile-ba542.firebaseapp.com",
-    databaseURL: "https://student-mobile-ba542.firebaseio.com",
-    projectId: "student-mobile-ba542",
-    storageBucket: "student-mobile-ba542.appspot.com",
+    apiKey: "<firebase api key>",
+    authDomain: "<firebase auth domain",
+    databaseURL: "<firebase database url",
+    projectId: "<firebase project id>",
+    storageBucket: "<firebase storage bucket",
 };
 
 export default firebaseConfig;
