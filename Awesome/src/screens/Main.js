@@ -44,7 +44,7 @@ class Main extends React.Component {
                 <View style={{position: 'absolute', top: 130, backgroundColor:'#9acaff',width:100,height:40, borderRadius:10}}>
                     <Button title='Scan' color='white' onPress={() => this.props.navigation.navigate('Scan')}/>
                 </View>
-                <View style={{position: 'absolute', bottom : 100, backgroundColor:'#9acaff',width:100, height:40, borderRadius:10}}>
+                <View style={{position: 'absolute', bottom : 10, backgroundColor:'#9acaff',width:100, height:40, borderRadius:10}}>
                     <Button title="Sign Out" color='white' onPress={this.handleSignOut} />
                 </View>
             </View>
