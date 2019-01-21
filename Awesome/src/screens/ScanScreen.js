@@ -4,7 +4,12 @@ import { BarCodeScanner, Permissions } from 'expo';
 import * as firebase from 'firebase';
 export default class ScanScreen extends React.Component {
     static navigationOptions = {
-        title: 'Scan'
+        title: 'Scan',
+        headerTitleStyle:{
+            fontFamily: 'Futura-CondensedExtraBold',
+            fontSize: 32,
+            fontWeight: 'bold'
+        }
     };
     constructor(props)
     {
@@ -45,12 +50,23 @@ export default class ScanScreen extends React.Component {
     }
 
     handleBarCodeScanned = ({ type, data }) => {
-        var date = new Date().toDateString();
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        today = mm + '-' + dd + '-' + yyyy;
+        console.log(today);
         var random = Math.floor(Math.random() * 100 + 1);
         //alert(`Bar code with type ${type}  and data ${data} has been scanned!`);
-        firebase.database().ref('presence/'+date+'_'+random).set({
+        firebase.database().ref('presence/'+today+'_'+random).set({
             presence_id : data,
-            user_email : this.state.currentUser.email,
+            user_email : this.state.currentUser.email
         }).then( alert('Presence was added'))
         .catch(error => alert('Some error occurred.'))
 
