@@ -41,8 +41,12 @@ class Main extends React.Component {
                 <Text style={{position: 'absolute',top: 50, fontFamily: 'Futura-CondensedExtraBold',fontSize: 22}}>
                     Hi {currentUser && currentUser.email}!
                 </Text>
-                <Button title='Scan' onPress={() => this.props.navigation.navigate('Scan')}/>
-                <Button title="Sign Out" onPress={this.handleSignOut} />
+                <View style={{position: 'absolute', bottom: 100, backgroundColor:'#9acaff',width:100,height:40, borderRadius:10}}>
+                    <Button title='Scan' color='white' onPress={() => this.props.navigation.navigate('Scan')}/>
+                </View>
+                
+                    <Button title="Sign Out" onPress={this.handleSignOut} />
+
             </View>
         )
     }
