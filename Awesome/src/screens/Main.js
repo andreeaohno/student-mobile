@@ -3,6 +3,14 @@ import { StyleSheet, Platform, Image, Text, View ,Button} from 'react-native'
 import * as firebase from 'firebase';
 import {connect} from 'react-redux';
 class Main extends React.Component {
+    static navigationOptions = {
+        title : 'Student - Mobile',
+        headerTitleStyle:{
+            fontFamily: 'Futura-CondensedExtraBold',
+            fontSize: 32,
+            fontWeight: 'bold'
+        }
+    };
     state = {
         currentUser: null
     };
@@ -30,7 +38,7 @@ class Main extends React.Component {
         const { currentUser } = this.state;
         return (
             <View style={styles.container}>
-                <Text>
+                <Text style={{position: 'absolute',top: 50, fontFamily: 'Futura-CondensedExtraBold',fontSize: 22}}>
                     Hi {currentUser && currentUser.email}!
                 </Text>
                 <Button title='Scan' onPress={() => this.props.navigation.navigate('Scan')}/>

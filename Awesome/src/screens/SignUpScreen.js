@@ -8,6 +8,11 @@ import * as firebase from 'firebase';
 class SignUpScreen extends Component{
     static navigationOptions = {
         title: 'Registration',
+        headerTitleStyle:{
+            fontFamily: 'Futura-CondensedExtraBold',
+            fontSize: 32,
+            fontWeight: 'bold'
+        }
     };
     constructor(props) {
         super(props);
@@ -93,7 +98,7 @@ const styles = StyleSheet.create({
     button:{
         width:200,
         height: 50,
-        backgroundColor: '#0086ff',
+        backgroundColor: '#9acaff',
         borderRadius:10,
         alignItems: 'center',
         margin:15,
