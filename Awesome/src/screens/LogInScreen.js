@@ -9,7 +9,12 @@ import {connect} from 'react-redux';
 
 class LogInScreen extends Component{
     static navigationOptions = {
-        title : ' Log in'
+        title : ' Log in',
+        headerTitleStyle:{
+            fontFamily: 'Futura-CondensedExtraBold',
+            fontSize: 32,
+            fontWeight: 'bold'
+        }
     };
     constructor(props){
         super(props);
@@ -86,7 +91,6 @@ class LogInScreen extends Component{
     }
 }
 
-
     const mapStateToProps = state => ({
         user: state.user
     });
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
     button:{
         width:200,
         height: 50,
-        backgroundColor: '#0086ff',
+        backgroundColor: '#9acaff',
         borderRadius:10,
         alignItems: 'center',
         margin:15,

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, Button, Image} from 'react-native';
+import {StyleSheet, View, Text, Button, Image, ImageBackground} from 'react-native';
 import * as firebase from "firebase";
 
 class HomeScreen extends Component{
@@ -28,14 +28,17 @@ class HomeScreen extends Component{
 
         return(
             <View style={styles.container}>
-                <View style={{ justifyContent: 'center', alignItems:'center', flexDirection: 'row'}}>
+                <View style={{ justifyContent: 'center', alignItems:'center', flexDirection: 'row', position:'absolute', top:'30%'}}>
                     <Image source={require('../../media/lightbulb.png')} style={styles.logo}/>
-                    <Text style={{textAlign: 'center', fontFamily:'Futura-CondensedExtraBold',fontSize:24,fontWeight: 'bold'}}> Student Mobile </Text>
+                    <Text style={{textAlign: 'center', fontFamily:'Futura-CondensedExtraBold',fontSize:34,fontWeight: 'bold'}}> Student Mobile </Text>
                 </View>
-                <View style={{ justifyContent: 'center', alignItems:'center', flexDirection: 'row', position:'absolute', bottom: 20}}>
-                    
-                    <Button style={styles.buttons} title={'LOG IN'} onPress={() => this.props.navigation.navigate('Login')}/>
-                    <Button style={styles.buttons} title={'SIGN UP'} onPress={() => this.props.navigation.navigate('Signup')}/>
+                <View style={{ justifyContent: 'center', alignItems:'center', flexDirection: 'row', position:'absolute', bottom: '20%'}}>
+                   <ImageBackground source={require('../../media/button.png')} style={{width: 130, height:40}}>
+                        <Button style={styles.buttons} color='white' title={'LOG IN'} onPress={() => this.props.navigation.navigate('Login')}/>
+                   </ImageBackground>
+                    <ImageBackground source={require('../../media/button.png')} style={{width: 130, height:40}}>
+                        <Button style={styles.buttons} color='white' title={'SIGN UP'} onPress={() => this.props.navigation.navigate('Signup')}/>
+                    </ImageBackground>
                 </View>
             </View>
         )
@@ -60,12 +63,10 @@ const styles = StyleSheet.create({
         fontFamily: 'Futura-CondensedExtraBold'
     },
     buttons: {
-        width: null,
-        height: 50,
-        fontSize: 40
+        color: 'black'
     },
     logo :{
-        width: 70,
-        height: 70,
+        width: 100,
+        height: 100,
     }
 });

@@ -4,11 +4,10 @@ import * as firebase from 'firebase';
 import AppContainer from './src/screens/AppContainer';
 import firebaseConfig from "./src/firebase";
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga'
-import { Provider } from 'react-redux'
-
-import rootSaga from './src/redux/saga/saga'
-import allReducers from './src/redux/reducer'
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
+import rootSaga from './src/redux/saga/saga';
+import allReducers from './src/redux/reducer';
 
 const sagaMiddleware = createSagaMiddleware();
 let store = createStore(allReducers, applyMiddleware(sagaMiddleware));
