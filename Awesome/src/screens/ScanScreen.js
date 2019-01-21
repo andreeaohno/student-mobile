@@ -3,6 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { BarCodeScanner, Permissions } from 'expo';
 import * as firebase from 'firebase';
 export default class ScanScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Scan'
+    };
     constructor(props)
     {
         super(props);
